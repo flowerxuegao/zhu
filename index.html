@@ -84,11 +84,11 @@
 				</div>
 				<div class="mui-input-row">
 					<label>支付宝借呗</label>
-					<input type="text" class = "commonInput" onfocus="inputFocus()"  placeholder="请输入" id = "test1">
+					<input type="text" class = "commonInput" autocomplete="off" onfocus="inputFocus()"  placeholder="请输入" id = "test1">
 				</div>
 				<div class="mui-input-row">
 					<label>微粒贷额度</label>
-					<input type="text" class = "commonInput" onfocus="inputFocus()" placeholder="请输入" id = "test2">
+					<input type="text" class = "commonInput" autocomplete="off" onfocus="inputFocus1()" placeholder="请输入" id = "test2">
 				</div>
 			
 				<div class="mui-button-row">
@@ -103,10 +103,18 @@
 				console.log(234);
 			}
 			function inputFocus(){
-				console.log(document.body.clientHeight);
-				setTimeout(function(){ 
-				  window.scrollTo(0,document.body.clientHeight); 
-				}, 500); 
+				var dom=document.getElementById('test1')
+				setTimeout(function(){
+				  dom.scrollIntoView(true);
+				  dom.scrollIntoViewIfNeeded();
+				}, 500);
+			}
+			function inputFocus1(){
+				var dom=document.getElementById('test2')
+				setTimeout(function(){
+				  dom.scrollIntoView(true);
+				  dom.scrollIntoViewIfNeeded();
+				}, 500);
 			}
 			$(document).ready(function () {
 				console.log($(window).height());
