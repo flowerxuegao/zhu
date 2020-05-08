@@ -84,11 +84,11 @@
 				</div>
 				<div class="mui-input-row">
 					<label>支付宝借呗</label>
-					<input type="text"  placeholder="请输入">
+					<input type="text" class = "commonInput" onfocus="inputFocus()"  placeholder="请输入" id = "test1">
 				</div>
 				<div class="mui-input-row">
 					<label>微粒贷额度</label>
-					<input type="text" placeholder="请输入">
+					<input type="text" class = "commonInput" onfocus="inputFocus()" placeholder="请输入" id = "test2">
 				</div>
 			
 				<div class="mui-button-row">
@@ -99,11 +99,24 @@
 		</div>
 		<script src = "js/jquery.min.js"></script>
 		<script>
-			
+			function testfn(){
+				console.log(234);
+			}
+			function inputFocus(){
+				console.log(document.body.clientHeight);
+				setTimeout(function(){ 
+				  window.scrollTo(0,document.body.clientHeight); 
+				}, 500); 
+			}
 			$(document).ready(function () {
 				console.log($(window).height());
-				$('body').css({'height':$(window).height()})
+				$('body').css({'height':$(window).height()});
+				
+				
+				
 			});
+			
+			
 		</script>
 	</body>
 
